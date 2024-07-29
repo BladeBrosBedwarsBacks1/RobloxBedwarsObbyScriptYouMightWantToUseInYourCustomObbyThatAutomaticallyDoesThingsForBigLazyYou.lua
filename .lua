@@ -1,41 +1,27 @@
-# Compiled Lua sources
-luac.out
+local players
+local winners
+local helpers
+local hosts
 
-# luarocks build files
-*.src.rock
-*.zip
-*.tar.gz
-
-# Object files
-*.o
-*.os
-*.ko
-*.obj
-*.elf
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-*.def
-*.exp
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
+function setTeams()
+    wait(5)
+    MessageService.broadcast("I am setting teams real quick.")
+    for i, team in ipairs(TeamService.getAllTeams()) do
+    if (team == Blue) then
+        players == team
+    elseif (team == Orange) then
+        winners == team
+    elseif (team == Pink) then
+        helpers == team
+    elseif (team == Yellow) then
+        hosts == team
+        end
+    end
+    for i, player in ipairs(PlayerService.getPlayers()) do
+    if player == MatchService.getHost() then
+        TeamService.setTeam(player, hosts)
+    elseif name: Hana431256 then
+        TeamService.setTeam(player, helpers)
+    else
+        TeamService.setTeam(player, players)
+end
