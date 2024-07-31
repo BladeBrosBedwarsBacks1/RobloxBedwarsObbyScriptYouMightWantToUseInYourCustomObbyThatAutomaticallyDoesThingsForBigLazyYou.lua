@@ -25,3 +25,56 @@ function setTeams()
     else
         TeamService.setTeam(players)
 end
+
+function playerSettings()
+    for i, player in ipairs(PlayerService.getPlayers()) do 
+        local entity = event.player:getEntity()
+        if player == MatchService.getHost() then
+        setMaxHealth(health: 0.01)
+        InventoryService.giveItem(ItemType.BARBARIAN_HELMET, 1)
+        InventoryService.giveItem(ItemType.LEATHER_CHESTPLATE, 1)
+        InventoryService.giveItem(ItemType.TELEPEARL, inf)
+        InventoryService.giveItem(ItemType.BALLOON, inf)
+        InventoryService.giveItem(ItemType.BEDROCK, 1)
+        InventoryService.giveItem(ItemType.KRESH, 1)
+        registerAdditionalAirJumps(id: bounce, count: inf)
+
+        elseif name: Hana431256
+        setMaxHealth(health: 0.01)
+        InventoryService.giveItem(ItemType.BARBARIAN_HELMET, 1)
+        InventoryService.giveItem(ItemType.LEATHER_CHESTPLATE, 1)
+        InventoryService.giveItem(ItemType.TELEPEARL, inf)
+        registerAdditionalAirJumps(id: bounce, count: inf)
+        end
+    end
+end
+function setTimers()
+    wait(1)
+    MessageService.broadcast("Start the parkouring.")
+    local timer = 60
+    while timer > 0 do
+        if timer <= 10 then
+            SoundService.playSound(SoundType.STOPWATCH_TICKING)
+        elseif timer == 1 then
+            MessageService.broadcast("Come on, the obby has only just started.")
+            end
+        end
+        timer -= 1
+        wait(1)
+    end
+end
+
+Events.MatchStart(function(event)
+    MessageService.broadcast("Get ready to PARKOUR!!!")
+    setTeams()
+    playerSettings()
+    setTimers()
+end)
+
+Events.PlayerAdded(function (event)
+    ChatService.sendMessage(event.player.name .. " joined the obby. Have fun!")
+end)
+
+Events.PlayerRemoving(function (event)
+    ChatService.sendMessage(event.player.name .. " left the game. Bye!")
+end)
