@@ -18,10 +18,10 @@ function setTeams()
         end
     end
     for i, player in ipairs(PlayerService.getPlayers()) do
-    if player == MatchService.getHost() then
-        TeamService.setTeam(player, hosts)
-    elseif name: Hana431256 then
-        TeamService.setTeam(player, helpers)
+    if userId: 4695134782 then
+        TeamService.setTeam(hosts)
+    elseif userId: 2063174871 then
+        TeamService.setTeam(helpers)
     else
-        TeamService.setTeam(player, players)
+        TeamService.setTeam(players)
 end
