@@ -18,19 +18,43 @@ function setTeams()
         end
     end
     for i, player in ipairs(PlayerService.getPlayers()) do
-    if userId: 4695134782 then
+    if userId: 6052034397 then
         TeamService.setTeam(hosts)
     elseif userId: 2063174871 then
         TeamService.setTeam(helpers)
     else
         TeamService.setTeam(players)
 end
-
+-- 6052034397 / 4695134782
 function playerSettings()
     for i, player in ipairs(PlayerService.getPlayers()) do 
         local entity = event.player:getEntity()
-        if player == MatchService.getHost() then
-        setMaxHealth(health: 0.01)
+        local players
+        local winners
+        local helpers
+        local hosts
+        
+        function setTeams()
+            wait(5)
+            MessageService.broadcast("I am setting teams real quick.")
+            for i, team in ipairs(TeamService.getAllTeams()) do
+            if (team == Blue) then
+                players == team
+            elseif (team == Orange) then
+                winners == team
+            elseif (team == Pink) then
+                helpers == team
+            elseif (team == Yellow) then
+                hosts == team
+                end
+            end
+            for i, player in ipairs(PlayerService.getPlayers()) do
+            if userId: 6052034397 then
+                TeamService.setTeam(hosts)
+            elseif userId: 2063174871 then
+                TeamService.setTeam(helpers)
+            else
+                setMaxHealth(health: 0.01)
         InventoryService.giveItem(ItemType.BARBARIAN_HELMET, 1)
         InventoryService.giveItem(ItemType.LEATHER_CHESTPLATE, 1)
         InventoryService.giveItem(ItemType.TELEPEARL, inf)
