@@ -38,8 +38,7 @@ function playerSettings()
         InventoryService.giveItem(ItemType.BEDROCK, 1)
         InventoryService.giveItem(ItemType.KRESH, 1)
         registerAdditionalAirJumps(id: bounce, count: inf)
-
-        elseif name: Hana431256
+    elseif userId: 2063174871 then
         setMaxHealth(health: 0.01)
         InventoryService.giveItem(ItemType.BARBARIAN_HELMET, 1)
         InventoryService.giveItem(ItemType.LEATHER_CHESTPLATE, 1)
