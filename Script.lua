@@ -52,9 +52,7 @@ function setTimers()
     MessageService.broadcast("Start the parkouring.")
     local timer = 60
     while timer > 0 do
-        if timer <= 10 then
-            SoundService.playSound(SoundType.STOPWATCH_TICKING)
-        elseif timer == 1 then
+        if timer == 1 then
             MessageService.broadcast("Come on, the obby has only just started.")
             end
         end
