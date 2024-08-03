@@ -6,7 +6,7 @@ AbilityService.createAbility("Use if you dare", KeyCode.X, {
 AbilityService.enableAbility("Use if you dare")
 
 Events.UseAbility(function (event)
-    if (event.abilityName == "script_speed") then
+    if (event.abilityName == "Use if you dare") then
         StatusEffectService.giveEffect(event.entity, StatusEffectType.DIZZY, 2)
     end
 end)
